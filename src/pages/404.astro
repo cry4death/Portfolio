@@ -1,0 +1,6 @@
+---
+import { withBase } from '../utils/paths';
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+---
+<Layout title="Страница не найдена — Максим" noindex><div class="container not-found"><span class="eyebrow">ОШИБКА 404</span><h1>Страница не найдена</h1><p>Проверьте адрес или вернитесь на главную.</p><a class="button" href={withBase('/')}>На главную <Icon name="arrow" /></a></div></Layout>

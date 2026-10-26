@@ -1,0 +1,30 @@
+[
+  {
+    "file": "home-desktop.webp",
+    "url": "https://lighthouse.by/",
+    "width": 1440,
+    "height": 1000,
+    "capturedAt": "2026-10-26T13:07:31.027Z"
+  },
+  {
+    "file": "doctors-desktop.webp",
+    "url": "https://lighthouse.by/specialist/",
+    "width": 1440,
+    "height": 1100,
+    "capturedAt": "2026-10-26T13:07:33.279Z"
+  },
+  {
+    "file": "services-desktop.webp",
+    "url": "https://lighthouse.by/service/",
+    "width": 1440,
+    "height": 1100,
+    "capturedAt": "2026-10-26T13:07:35.253Z"
+  },
+  {
+    "file": "home-mobile.webp",
+    "url": "https://lighthouse.by/",
+    "width": 390,
+    "height": 844,
+    "capturedAt": "2026-10-26T13:07:36.281Z"
+  }
+]

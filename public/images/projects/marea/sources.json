@@ -1,0 +1,44 @@
+{
+  "screenshots": [
+    {
+      "file": "home-desktop.webp",
+      "source": "http://marea.local/",
+      "width": 1440,
+      "height": 900,
+      "type": "Screenshot of local development site",
+      "capturedAt": "2026-10-26T14:17:48.133Z"
+    },
+    {
+      "file": "services-desktop.webp",
+      "source": "http://marea.local/uslugi/",
+      "width": 1440,
+      "height": 1100,
+      "type": "Screenshot of local development site",
+      "capturedAt": "2026-10-26T14:17:48.814Z"
+    },
+    {
+      "file": "service-desktop.webp",
+      "source": "http://marea.local/uslugi/massazh-dlya-tela/",
+      "width": 1440,
+      "height": 1100,
+      "type": "Screenshot of local development site",
+      "capturedAt": "2026-10-26T14:17:49.434Z"
+    },
+    {
+      "file": "home-mobile.webp",
+      "source": "http://marea.local/",
+      "width": 390,
+      "height": 844,
+      "type": "Screenshot of local development site",
+      "capturedAt": "2026-10-26T14:17:55.633Z"
+    }
+  ],
+  "designMaterials": {
+    "source": "MARÉA project documents",
+    "files": [
+      "hero-variants-preview-2.jpg",
+      "blocks-variants-preview-3.jpg"
+    ],
+    "type": "Design variants; not screenshots of the running WordPress site"
+  }
+}

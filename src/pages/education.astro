@@ -1,0 +1,25 @@
+---
+import { withBase } from '../utils/paths';
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import TechBadge from '../components/TechBadge.astro';
+import PhotoCredits from '../components/PhotoCredits.astro';
+import StudySkills from '../components/StudySkills.astro';
+import { education, courseGroups, courseCount, coursework, placements, formatCourseCount } from '../data/education';
+---
+<Layout title="Образование в БГУ — Максим" description="Прикладная информатика, БГУ, 2022–2026. Учебная программа, дисциплины, курсовые проекты и дипломная работа.">
+  <div class="container education-page">
+    <a class="back-link" href={withBase('/#education')}>← На главную</a>
+    <header class="education-page-header"><span class="eyebrow">БГУ · {education.years}</span><h1>{education.specialty}</h1><p class="education-page-track">{education.track}</p><p>{education.faculty}</p></header>
+    <div class="campus-gallery"><figure><img src={withBase('/images/bsu/main.webp')} width="1440" height="758" alt="Главный корпус БГУ в Минске" /><figcaption>Главный корпус БГУ</figcaption></figure><figure><img src={withBase('/images/bsu/campus.webp')} width="1000" height="590" alt="Университетский городок БГУ, вид сверху" /><figcaption>Университетский городок</figcaption></figure></div>
+    <PhotoCredits />
+    <section class="graduation-project" aria-labelledby="graduation-title"><div><span class="eyebrow">Дипломная работа · 2026</span><h2 id="graduation-title">{education.thesis}</h2><p>Разработка приложения для медицинского центра стала темой дипломной работы. Проект продолжаю развивать на Flutter.</p><div class="tags"><TechBadge name="Flutter" /><TechBadge name="Dart" /></div><a class="button" href={withBase('/projects/lighthouse-mobile/')}>Посмотреть проект <Icon name="arrow" size={19} /></a></div><span class="graduation-symbol" aria-hidden="true"><img src={withBase('/icons/flutter.svg')} width="90" height="90" alt="" /></span></section>
+    <section class="study-overview" aria-labelledby="study-title"><div><h2 id="study-title">Учебная программа</h2><p>{courseCount} дисциплин из приложения к диплому, сгруппированных по направлениям.</p></div><div class="academic-context"><span>Изучал в университете</span><div class="tags"><TechBadge name=".NET" /></div><p>Алгоритмы, 3D-проектирование, веб-дизайн, компьютерные сети и защита информации.</p></div></section>
+    <div id="study-tools"><StudySkills /></div>
+    <div class="course-search"><label for="course-search">Поиск по дисциплинам</label><div class="course-search-field"><input type="search" id="course-search" placeholder="Например, математика или дизайн" autocomplete="off" /><button type="button" class="icon-button" data-clear-courses aria-label="Очистить поиск" hidden><Icon name="close" size={20} /></button></div><p role="status" aria-live="polite" data-course-status>Всего дисциплин: {courseCount}</p></div>
+    <div class="course-groups">{courseGroups.map((group, index) => <details class="course-group" id={group.id} data-course-group open={index === 0}><summary><span class="course-group-icon"><img src={withBase('/icons/' + group.icon + '.svg')} width="26" height="26" alt="" /></span><span class="course-group-title">{group.title}<span>{formatCourseCount(group.courses.length)}</span></span><span class="course-expand" aria-hidden="true">+</span></summary><div class="course-group-content"><p>{group.description}</p><ul>{group.courses.map((course) => <li data-course>{course}</li>)}</ul></div></details>)}</div>
+    <p class="course-empty" data-course-empty hidden>По этому запросу дисциплин не найдено. Попробуйте другое название.</p>
+    <section class="study-projects" aria-labelledby="study-projects-title"><h2 id="study-projects-title">Курсовые работы и практика</h2><div class="study-projects-grid"><div><h3>Дисциплины с курсовыми работами</h3><ul>{coursework.map((course) => <li>{course}</li>)}</ul></div><div><h3>Практика</h3><ul>{placements.map((placement) => <li>{placement}</li>)}</ul></div></div></section>
+  </div>
+  <script src="../scripts/education.ts"></script>
+</Layout>

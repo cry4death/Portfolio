@@ -1,0 +1,6 @@
+---
+import { withBase } from '../utils/paths';
+import { profile } from '../data/profile';
+import Icon from './Icon.astro';
+---
+<footer class="site-footer"><div class="container footer-inner"><a href={withBase('/')} class="wordmark"><span class="brand-icon"><Icon name="code" size={18} /></span><span>{profile.name}<span class="brand-dot">.</span></span></a><span>{profile.role}</span><span class="footer-year">© {new Date().getFullYear()}</span></div></footer>

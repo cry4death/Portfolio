@@ -1,0 +1,19 @@
+---
+import { profile } from '../data/profile';
+---
+<article class="employment" aria-labelledby="employment-title">
+  <div class="employment-heading"><span>Опыт работы</span><span class="employment-status">{profile.employment.since ? `${profile.employment.since} — сейчас` : 'Сейчас'}</span></div>
+  <h3 id="employment-title">{profile.employment.position}</h3>
+  <p class="employment-company">{profile.employment.company}</p>
+  <p class="employment-description">{profile.employment.responsibilities}</p>
+</article>
+
+<style>
+  .employment { margin-top: 28px; padding: 25px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .employment-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; color: var(--muted); font-size: 14px; }
+  .employment-status { padding: 4px 10px; color: var(--blue); background: var(--blue-soft); border-radius: 5px; }
+  .employment h3 { font-size: 24px; line-height: 1.3; letter-spacing: -.025em; margin-top: 16px; }
+  .employment-company { color: var(--ink); font-size: 18px; font-weight: 500; margin-top: 8px; }
+  .employment-description { color: var(--text); font-size: 17px; line-height: 1.8; margin-top: 13px; }
+  @media (max-width: 760px) { .employment { padding: 21px; } }
+</style>

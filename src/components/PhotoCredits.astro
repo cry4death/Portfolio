@@ -1,0 +1,4 @@
+---
+import photos from '../../public/images/bsu/sources.json';
+---
+<p class="photo-credits">Фото БГУ: {photos.map((photo, index) => <><a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.author}</a>{index < photos.length - 1 ? ' и ' : ' · '}</>)}<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>. Размер и формат изменены.</p>

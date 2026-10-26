@@ -1,0 +1,5 @@
+---
+interface Props { summary: { role: string; task: string; contributions: string[]; result: string; period?: string; team?: string; }; }
+const { summary } = Astro.props;
+---
+<section class="case-summary" aria-labelledby="case-summary-title"><h2 id="case-summary-title">Мой вклад</h2><dl class="case-facts"><div><dt>Роль</dt><dd>{summary.role}</dd></div>{summary.period && <div><dt>Период</dt><dd>{summary.period}</dd></div>}{summary.team && <div><dt>Команда</dt><dd>{summary.team}</dd></div>}</dl><p>{summary.task}</p><ul>{summary.contributions.map((item) => <li>{item}</li>)}</ul><div class="case-result"><strong>Результат</strong><p>{summary.result}</p></div></section>

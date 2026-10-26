@@ -1,0 +1,10 @@
+---
+import { withBase } from '../utils/paths';
+interface Props { visual: 'lighthouse' | 'marea' | 'mobile'; large?: boolean; }
+const { visual, large = false } = Astro.props;
+---
+<div class:list={['project-visual', `visual-${visual}`, { 'visual-large': large }]}>
+  {visual === 'lighthouse' && <div class="browser-frame"><div class="browser-top"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-address">lighthouse.by</span><span>↗</span></div><div class="lighthouse-screen"><img src={withBase('/images/projects/lighthouse/home-desktop.webp')} alt="Главная страница Lighthouse.by — скриншот опубликованного сайта" loading="lazy" width="1440" height="1000" /></div></div>}
+  {visual === 'marea' && <><div class="browser-frame"><div class="browser-top"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-address">MARÉA · локальная версия</span></div><div class="marea-screen"><img src={withBase('/images/projects/marea/home-desktop.webp')} width="1440" height="900" alt="Главная страница MARÉA — скриншот локальной версии сайта" loading="lazy" /></div></div><span class="mockup-label">Сайт в разработке</span></>}
+  {visual === 'mobile' && <><img class="mobile-project-mockup" src={withBase('/images/projects/mobile/overview.webp')} alt="Мокап приложения Lighthouse Mobile — главная страница с поиском врачей и услуг" loading="lazy" width="979" height="678" /><span class="mockup-label">Мокап приложения</span></>}
+</div>

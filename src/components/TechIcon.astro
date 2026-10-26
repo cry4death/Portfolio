@@ -1,0 +1,8 @@
+---
+import { withBase } from '../utils/paths';
+import { technologies } from '../data/technologies';
+interface Props { name: string; size?: number; }
+const { name, size = 20 } = Astro.props;
+const technology = technologies[name];
+---
+{technology && <span class="tech-icon-frame" aria-hidden="true"><img src={withBase(`/icons/${technology.icon}.${technology.format ?? 'svg'}`)} alt="" width={size} height={size} loading="lazy" decoding="async" /></span>}

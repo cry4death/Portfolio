@@ -1,0 +1,70 @@
+@layer components {
+  .mobile-contact-link { display: none; }
+  .hero { gap: 50px; padding-block: 55px; }
+  .hero-description { max-width: 580px; }
+  .hero-buttons .button { gap: 16px; }
+  .hero-project { display: block; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .hero-project-status { display: block; padding: 15px 19px; color: var(--green); font-size: 14px; }
+  .hero-project .project-visual { height: auto; padding: 15px; border-radius: 0; }
+  .hero-project-caption { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 17px 20px; }
+  .hero-project-caption strong { display: block; font-size: 23px; font-weight: 550; letter-spacing: -.025em; }
+  .hero-project-caption div > span { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .hero-project:hover .hero-project-caption { color: var(--blue); }
+  #projects.section { padding-top: 55px; }
+  .skills-primary .skill-card-heading { margin-bottom: 0; }
+  .skills-primary .skill-card { padding: 23px; }
+  .more-skills { margin-top: 22px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .more-skills > summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 25px; cursor: pointer; list-style: none; }
+  .more-skills > summary::-webkit-details-marker { display: none; }
+  .more-skills summary strong { display: block; font-size: 19px; font-weight: 500; }
+  .more-skills summary span > span { display: block; color: var(--muted); font-size: 15px; margin-top: 7px; }
+  .more-skills-symbol { color: var(--blue); font-size: 28px; }
+  .more-skills[open] .more-skills-symbol { transform: rotate(45deg); }
+  .more-skills-content { padding: 0 22px 22px; }
+  .case-overview { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 30px; align-items: start; margin-block: 30px 55px; }
+  .case-summary { min-width: 0; padding: 25px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+  .case-summary > h2 { font-size: 28px; letter-spacing: -.025em; }
+  .case-facts { display: grid; gap: 12px; margin: 20px 0; }
+  .case-facts > div { display: grid; grid-template-columns: 65px 1fr; gap: 10px; }
+  .case-facts dt { color: var(--muted); font-size: 14px; }
+  .case-facts dd { font-size: 16px; color: var(--ink); }
+  .case-summary > p { font-size: 17px; line-height: 1.8; }
+  .case-summary ul { padding-left: 19px; font-size: 17px; line-height: 1.75; color: var(--text); margin-block: 15px; }
+  .case-summary li { padding-left: 3px; margin-block: 9px; }
+  .case-summary li::marker { color: var(--blue); }
+  .case-result { padding-top: 17px; border-top: 1px solid var(--line); }
+  .case-result > strong { display: block; font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+  .case-result > p { font-size: 17px; }
+  .case-overview .project-visual { border-radius: 10px; height: auto; min-height: 0; margin: 0; }
+  .case-overview .visual-lighthouse { padding: 16px; }
+  .case-overview .visual-mobile { height: 420px; }
+  .case-overview .visual-marea { min-height: 330px; padding-inline: 20px; }
+  .visual-marea { padding: 22px 20px 40px; align-items: center; }
+  .marea-screen { background: #f8f5ee; }
+  .marea-screen > img { display: block; width: 100%; height: auto; }
+  .visual-marea .browser-address { font-size: 12px; }
+  .gallery-design img { width: 100%; height: 350px; object-fit: cover; object-position: top; }
+  .prose > h2:first-child { margin-top: 0; }
+}
+@layer responsive {
+  @media (max-width: 1100px) { .hero { padding-block: 45px; gap: 32px; } .case-overview { gap: 22px; } }
+  @media (max-width: 760px) {
+    .site-header nav .mobile-contact-link { display: block; color: var(--blue); font-weight: 550; }
+    .hero { gap: 26px; padding-block: 32px; }
+    .hero-intro { margin-bottom: 15px; }
+    .hero-description { margin-top: 17px; }
+    .hero-buttons { gap: 18px; margin-top: 22px; }
+    .hero-project-status { padding: 11px 16px; }
+    .hero-project-caption { padding: 13px 16px; }
+    .hero-project-caption strong { font-size: 21px; }
+    .hero-project .project-visual { padding: 10px; }
+    #projects.section { padding-top: 36px; }
+    .more-skills > summary { padding: 20px; }
+    .more-skills-content { padding: 0 14px 14px; }
+    .case-overview { grid-template-columns: 1fr; margin-top: 25px; }
+    .case-summary { padding: 22px; }
+    .case-overview .visual-mobile { height: 320px; }
+    .case-overview .visual-marea { min-height: 300px; }
+    .gallery-design img { height: 280px; }
+  }
+}

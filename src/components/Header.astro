@@ -1,0 +1,18 @@
+---
+import { withBase } from '../utils/paths';
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="wordmark" href={withBase('/')} aria-label={`${profile.name} — главная`}><span class="brand-icon"><Icon name="code" size={21} /></span><span>{profile.name}<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Основная навигация" id="main-navigation">
+      <a href={withBase('/#projects')}>Проекты</a><a href={withBase('/#skills')}>Навыки</a><a href={withBase('/#education')}>Образование</a><a href={withBase('/#notes')}>Заметки</a><a class="mobile-contact-link" href={withBase('/#contact')}>Связаться</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" type="button" aria-label="Включить тёмную тему" aria-pressed="false"><span class="theme-sun"><Icon name="sun" /></span><span class="theme-moon"><Icon name="moon" /></span></button>
+      <a href={withBase('/#contact')} class="button button-small header-contact">Связаться <Icon name="arrow" size={16} /></a>
+      <button class="icon-button menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-navigation"><span class="menu-open"><Icon name="menu" /></span><span class="menu-close"><Icon name="close" /></span></button>
+    </div>
+  </div>
+</header>

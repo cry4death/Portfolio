@@ -1,0 +1,150 @@
+@layer components {
+  figure { margin: 0; }
+  .study-skills { margin-top: 42px; padding-top: 34px; border-top: 1px solid var(--line); }
+  .study-skills-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 22px; margin-bottom: 24px; }
+  .study-skills-heading > h3 { font-size: 28px; letter-spacing: -.035em; }
+  .study-skills-heading > p { font-size: 16px; }
+  .study-skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .study-skill { display: flex; flex-direction: column; min-width: 0; padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  .study-skill-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 17px; }
+  .study-skill h4 { font-size: 21px; letter-spacing: -.025em; }
+  .study-tool-icon { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; padding: 7px; border: 1px solid #e0e5ed; border-radius: 10px; background: #fff; }
+  .study-tool-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .study-skill > p { font-size: 17px; line-height: 1.75; flex: 1; }
+  .study-skill .tags { gap: 7px; }
+  .study-skill .tech-badge { font-size: 14px; background: var(--bg); }
+  .education-section { padding-block: 82px; background: var(--soft); margin-top: 45px; }
+  .education-section .eyebrow { font-family: var(--font); font-size: 15px; letter-spacing: 0; margin-bottom: 15px; }
+  .education-section .section-heading { margin-bottom: 40px; }
+  .university-showcase { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+  .university-photos { position: relative; min-width: 0; padding: 0 10px 24px 0; }
+  .university-main-photo > img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; }
+  .university-main-photo > figcaption { padding: 12px 0; font-size: 14px; color: var(--muted); }
+  .university-secondary-photo { position: absolute; right: -12px; bottom: 4px; width: 43%; border: 6px solid var(--soft); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px #101d3c12; }
+  .university-secondary-photo > img { width: 100%; aspect-ratio: 1.48; height: auto; object-fit: cover; }
+  .university-period { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; font: 18px var(--mono); color: var(--blue); }
+  .university-period > span { font: 14px var(--font); color: var(--ink); padding: 5px 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 5px; }
+  .university-description > h3 { font-size: 30px; line-height: 1.25; letter-spacing: -.035em; margin-top: 22px; }
+  .university-description > p { font-size: 17px; margin-top: 14px; }
+  .university-description > .university-track { font-size: 19px; color: var(--ink); }
+  .university-description > .button { margin-top: 25px; }
+  .photo-credits { font-size: 13px; line-height: 1.7; color: var(--muted); margin-top: 10px; }
+  .photo-credits a { text-decoration: underline; text-underline-offset: 3px; }
+  .photo-credits a:hover { color: var(--blue); }
+  .education-areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
+  .education-area { display: flex; gap: 14px; align-items: center; padding: 19px 21px; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; }
+  .education-area > img { flex-shrink: 0; padding: 2px; background: #fff; border-radius: 4px; }
+  .education-area > div { flex: 1; }
+  .education-area h3 { font-size: 18px; letter-spacing: -.015em; line-height: 1.35; }
+  .education-area div > span { display: block; color: var(--muted); font-size: 14px; margin-top: 5px; }
+  .education-area > svg { color: var(--muted); flex-shrink: 0; }
+  .education-area:hover { border-color: var(--blue); }
+  .education-thesis { display: flex; justify-content: space-between; gap: 30px; align-items: center; margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--line); }
+  .education-thesis .eyebrow { margin-bottom: 12px; }
+  .education-thesis h3 { max-width: 700px; font-size: 24px; letter-spacing: -.025em; line-height: 1.35; }
+  .education-thesis p { font-size: 17px; margin-top: 12px; }
+  .education-thesis > a { flex-shrink: 0; }
+  .education-page { padding-block: 40px 90px; }
+  .education-page-header { max-width: 900px; margin-bottom: 38px; }
+  .education-page-header > h1 { font-size: clamp(36px, 5vw, 65px); letter-spacing: -.05em; }
+  .education-page-header > p { font-size: 18px; margin-top: 13px; }
+  .education-page-header > .education-page-track { font-size: 24px; color: var(--ink); line-height: 1.4; margin-top: 20px; }
+  .campus-gallery { display: grid; grid-template-columns: 1.35fr 1fr; gap: 22px; }
+  .campus-gallery img { width: 100%; height: 320px; object-fit: cover; border-radius: 10px; }
+  .campus-gallery figcaption { color: var(--muted); font-size: 14px; padding-block: 10px; }
+  .study-overview { display: grid; grid-template-columns: 1.2fr 1fr; gap: 55px; align-items: start; margin-top: 65px; }
+  .study-overview h2 { font-size: 36px; letter-spacing: -.04em; }
+  .study-overview p { font-size: 18px; margin-top: 18px; max-width: 600px; }
+  .academic-context { border-left: 2px solid var(--blue); padding-left: 22px; }
+  .academic-context > span { font-size: 15px; color: var(--muted); }
+  .academic-context .tags { margin-top: 12px; }
+  .academic-context p { font-size: 17px; }
+  .course-search { margin-top: 60px; padding: 25px 0; border-top: 1px solid var(--line); }
+  .course-search > label { display: block; font-size: 17px; font-weight: 500; margin-bottom: 12px; }
+  .course-search-field { display: flex; align-items: center; max-width: 640px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+  .course-search-field:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .course-search input { display: block; min-width: 0; width: 100%; border: 0; color: var(--ink); background: transparent; font: 17px var(--font); padding: 17px; border-radius: inherit; outline: none; }
+  .course-search input::placeholder { color: var(--muted); opacity: 1; }
+  .course-search-field > button { flex-shrink: 0; margin-right: 6px; }
+  .course-search > p { margin-top: 13px; font-size: 15px; }
+  .course-groups { display: grid; gap: 13px; margin-top: 8px; }
+  .course-group { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); scroll-margin-top: 110px; }
+  .course-group > summary { display: flex; list-style: none; align-items: center; gap: 16px; padding: 23px 26px; cursor: pointer; }
+  .course-group > summary::-webkit-details-marker { display: none; }
+  .course-group-icon { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #dce4fa; border-radius: 10px; background: #edf1ff; }
+  .course-group-title { font-size: 21px; font-weight: 500; line-height: 1.4; flex: 1; }
+  .course-group-title > span { display: block; color: var(--muted); font-size: 14px; font-weight: 400; margin-top: 5px; }
+  .course-expand { color: var(--blue); font-size: 26px; font-weight: 350; }
+  .course-group[open] .course-expand { transform: rotate(45deg); }
+  .course-group-content { padding: 0 26px 25px; }
+  .course-group-content > p { font-size: 17px; margin-bottom: 18px; }
+  .course-group-content > ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 30px; list-style: none; padding: 0; margin: 0; }
+  .course-group-content li { font-size: 17px; line-height: 1.65; color: var(--text); padding-block: 10px; border-top: 1px solid var(--line); }
+  .course-empty { padding: 30px 0; font-size: 18px; }
+  .study-projects { margin-top: 65px; }
+  .study-projects h2 { font-size: 36px; line-height: 1.25; }
+  .study-projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 28px; }
+  .study-projects-grid > div { border-top: 2px solid var(--line); padding-top: 20px; }
+  .study-projects-grid h3 { font-size: 22px; }
+  .study-projects-grid ul { padding-left: 22px; font-size: 17px; line-height: 1.85; color: var(--text); }
+  .study-projects-grid li { padding-block: 5px; }
+  .study-projects-grid li::marker { color: var(--blue); }
+  .graduation-project { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 55px; padding: 38px; border: 1px solid var(--line); border-radius: 12px; background: var(--blue-soft); }
+  .graduation-project > div { max-width: 800px; }
+  .graduation-project .eyebrow { font-family: var(--font); letter-spacing: 0; font-size: 15px; }
+  .graduation-project h2 { font-size: 34px; line-height: 1.3; letter-spacing: -.035em; }
+  .graduation-project p { font-size: 18px; margin-top: 18px; }
+  .graduation-project .button { margin-top: 24px; }
+  .graduation-symbol { display: grid; place-items: center; flex-shrink: 0; width: 140px; height: 140px; background: #fff; border-radius: 28px; border: 1px solid #dfe5f3; }
+  html:not(.js) .course-search { display: none; }
+}
+
+@layer responsive {
+  @media (max-width: 1100px) {
+    .study-skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .university-showcase { gap: 36px; }
+    .university-description > h3 { font-size: 27px; }
+    .university-main-photo > img { height: 330px; }
+    .site-header nav { gap: 20px; margin-right: 10px; }
+    .header-inner { gap: 22px; }
+  }
+  @media (max-width: 900px) and (min-width: 761px) {
+    .header-contact { display: none; }
+    .site-header nav { margin-right: 0; }
+  }
+  @media (max-width: 760px) {
+    .study-skills-heading { flex-direction: column; gap: 14px; }
+    .study-skills-grid { grid-template-columns: 1fr; }
+    .study-skill { padding: 23px; }
+    .study-skill h4 { font-size: 22px; }
+    .education-section { margin-top: 20px; padding-block: 55px; }
+    .university-showcase { grid-template-columns: 1fr; gap: 25px; }
+    .university-photos { padding: 0 0 30px; }
+    .university-main-photo > img { height: 250px; }
+    .university-main-photo > figcaption { max-width: 62%; font-size: 13px; }
+    .university-secondary-photo { right: 0; bottom: 5px; width: 41%; border-width: 4px; }
+    .university-description > h3 { font-size: 29px; }
+    .photo-credits { margin-top: 24px; }
+    .education-areas { grid-template-columns: 1fr; margin-top: 28px; }
+    .education-area { padding: 17px; }
+    .education-thesis { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .education-thesis h3 { font-size: 24px; }
+    .education-page { padding-block: 25px 55px; }
+    .education-page-header > .education-page-track { font-size: 22px; }
+    .campus-gallery { grid-template-columns: 1fr; gap: 20px; }
+    .campus-gallery img { height: 230px; }
+    .study-overview { grid-template-columns: 1fr; gap: 28px; margin-top: 45px; }
+    .study-overview h2, .study-projects h2 { font-size: 32px; }
+    .course-search { margin-top: 40px; }
+    .course-search input { font-size: 16px; padding-inline: 13px; }
+    .course-group > summary { padding: 19px 16px; gap: 12px; }
+    .course-group-title { font-size: 18px; }
+    .course-group-icon { width: 38px; height: 38px; }
+    .course-group-content { padding: 0 18px 20px; }
+    .course-group-content > ul { grid-template-columns: 1fr; gap: 5px; }
+    .study-projects-grid { grid-template-columns: 1fr; gap: 23px; }
+    .graduation-project { padding: 26px 22px; margin-top: 35px; }
+    .graduation-project h2 { font-size: 28px; }
+    .graduation-symbol { display: none; }
+  }
+}

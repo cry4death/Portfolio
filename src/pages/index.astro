@@ -1,0 +1,47 @@
+---
+import { withBase } from '../utils/paths';
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import TechBadge from '../components/TechBadge.astro';
+import ProjectVisual from '../components/ProjectVisual.astro';
+import Education from '../components/Education.astro';
+import Employment from '../components/Employment.astro';
+import Contact from '../components/Contact.astro';
+import { profile } from '../data/profile';
+import Skills from '../components/Skills.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const notes = (await getCollection('notes')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const categories = [...new Set(projects.map((project) => project.data.category))];
+---
+<Layout>
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <div class="hero-intro"><span class="intro-line"></span>Веб- и мобильная разработка</div>
+      <h1 id="hero-title">Максим.<br /><span>Разработчик.</span></h1>
+      <p class="hero-description">Разрабатываю сайты на Laravel и WordPress, мобильное приложение для медицинского центра на Flutter.</p>
+      <div class="hero-buttons"><a href={withBase('/projects/lighthouse/')} class="button">Кейс Lighthouse <Icon name="arrow" size={18} /></a><a href="#contact" class="text-link">Связаться <span aria-hidden="true">↓</span></a></div>
+    </div>
+    <a class="hero-project" href={withBase('/projects/lighthouse/')} aria-label="Lighthouse.by — опубликованный проект и мой вклад"><span class="hero-project-status">Опубликованный проект</span><ProjectVisual visual="lighthouse" /><div class="hero-project-caption"><div><strong>Lighthouse.by</strong><span>Сайт медицинского центра</span></div><Icon name="arrow" size={25} /></div></a>
+  </section>
+
+  <section id="projects" class="section container" aria-labelledby="projects-title">
+    <div class="section-heading"><h2 id="projects-title">Проекты</h2><p>Медицинский сайт, бьюти-студия и мобильное приложение.</p></div>
+    <div class="project-toolbar"><div class="filters" role="group" aria-label="Фильтр проектов"><button type="button" data-filter="all" aria-pressed="true">Все проекты <span>{projects.length}</span></button>{categories.map((category) => <button type="button" data-filter={category} aria-pressed="false">{category}</button>)}</div></div>
+    <p class="sr-only" data-filter-status role="status" aria-live="polite">Показано проектов: {projects.length}</p>
+    <div class="project-grid">{projects.map((project, index) => <article class:list={['project-card', { 'project-featured': index === 0 }]} data-category={project.data.category}>
+      <a class="project-image-link" href={withBase(`/projects/${project.id}/`)} aria-label={`Подробнее о проекте ${project.data.title}`}><ProjectVisual visual={project.data.visual} large={index === 0} /><span class="project-hover-arrow"><Icon name="arrow" size={24} /></span></a>
+      <div class="project-info"><div><div class="project-meta"><span>{project.data.category}</span><span class:list={['project-status', { 'is-live': project.data.status === 'Опубликован' }]}><i></i>{project.data.status}</span></div><a class="project-title" href={withBase(`/projects/${project.id}/`)}><h3>{project.data.title}</h3><Icon name="arrow" size={24} /></a><p>{project.data.description}</p></div><div class="tags">{project.data.tags.map((tag) => <TechBadge name={tag} />)}</div></div>
+    </article>)}</div>
+  </section>
+
+  <section id="about" class="about-section" aria-labelledby="about-title"><div class="container about-grid"><div class="about-heading"><h2 id="about-title">Обо мне</h2></div><div class="about-content"><p>{profile.about}</p><Employment /><div class="education"><span class="education-icon"><Icon name="code" size={23} /></span><div><span>Образование</span><strong>Белорусский государственный университет</strong><p>Прикладная информатика · Выпускник</p></div></div></div></div></section>
+
+  <Skills />
+
+  <Education />
+
+  <section id="notes" class="section container notes-section" aria-labelledby="notes-title"><div class="section-heading"><h2 id="notes-title">Заметки</h2><p>О разработке и устройстве проектов.</p></div><div class="notes-list">{notes.map((note) => <a class="note-row" href={withBase(`/notes/${note.id}/`)}><div class="note-date"><span>{note.data.date.toLocaleDateString('ru-RU', { day: '2-digit', month: 'short', timeZone: 'UTC' })}</span><span>{note.data.date.getUTCFullYear()}</span></div><div class="note-content"><span class="note-tag">{note.data.tag}</span><h3>{note.data.title}</h3><p>{note.data.description}</p></div><span class="read-time">{note.data.minutes} мин чтения</span><Icon name="arrow" size={25} /></a>)}</div></section>
+
+  <Contact />
+</Layout>

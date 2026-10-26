@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+const telegramHandle = profile.telegram ? `@${new URL(profile.telegram).pathname.slice(1)}` : '';
+---
+<section id="contact" class="container contact-section" aria-labelledby="contact-title">
+  <div class="contact-card">
+    <div><h2 id="contact-title">Контакты</h2><p>Для вопросов по работе и проектам.</p></div>
+    <div class="contact-details">
+      {profile.email ? <>
+        <a class="contact-email" href={`mailto:${profile.email}`}>{profile.email}<Icon name="arrow" size={26} /></a>
+        <button type="button" class="copy-email" data-copy-email={profile.email}><Icon name="copy" size={16} />Скопировать email</button>
+        <span class="copy-status" data-copy-status role="status"></span>
+      </> : profile.telegram ? <>
+        <span class="contact-method">Telegram</span>
+        <a class="contact-email" href={profile.telegram} target="_blank" rel="noopener noreferrer">{telegramHandle}<Icon name="arrow" size={26} /></a>
+      </> : <p class="contact-pending">Пока не добавлены.</p>}
+      {(profile.github || (profile.email && profile.telegram)) && <div class="contact-links">
+        {profile.email && profile.telegram && <a href={profile.telegram} target="_blank" rel="noopener noreferrer">Telegram <Icon name="arrow" size={17} /></a>}
+        {profile.github && <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <Icon name="arrow" size={17} /></a>}
+      </div>}
+    </div>
+  </div>
+</section>
+<style>.contact-method { font-size: 16px; color: #fff; margin-bottom: 5px; }</style>

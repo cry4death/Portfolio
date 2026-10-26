@@ -1,0 +1,210 @@
+[
+  {
+    "file": "php.svg",
+    "source": "devicon:php"
+  },
+  {
+    "file": "laravel.svg",
+    "source": "devicon:laravel"
+  },
+  {
+    "file": "filament.svg",
+    "source": "devicon:filamentphp"
+  },
+  {
+    "file": "livewire.svg",
+    "source": "devicon:livewire"
+  },
+  {
+    "file": "javascript.svg",
+    "source": "logos:javascript"
+  },
+  {
+    "file": "tailwindcss.svg",
+    "source": "logos:tailwindcss-icon"
+  },
+  {
+    "file": "wordpress.svg",
+    "source": "logos:wordpress-icon"
+  },
+  {
+    "file": "mysql.svg",
+    "source": "logos:mysql-icon"
+  },
+  {
+    "file": "git.svg",
+    "source": "devicon:git"
+  },
+  {
+    "file": "vite.svg",
+    "source": "logos:vite-icon"
+  },
+  {
+    "file": "githubactions.svg",
+    "source": "logos:github-actions"
+  },
+  {
+    "file": "bash.svg",
+    "source": "logos:bash-icon"
+  },
+  {
+    "file": "playwright.svg",
+    "source": "logos:playwright"
+  },
+  {
+    "file": "flutter.svg",
+    "source": "logos:flutter-icon"
+  },
+  {
+    "file": "dart.svg",
+    "source": "logos:dart"
+  },
+  {
+    "file": "woocommerce.svg",
+    "source": "logos:woocommerce-icon"
+  },
+  {
+    "file": "astro.svg",
+    "source": "logos:astro-icon"
+  },
+  {
+    "file": "typescript.svg",
+    "source": "logos:typescript-icon"
+  },
+  {
+    "file": "markdown.svg",
+    "source": "simple-icons:markdown"
+  },
+  {
+    "file": "cloudflare.svg",
+    "source": "logos:cloudflare-workers-icon"
+  },
+  {
+    "file": "api.svg",
+    "source": "lucide:network"
+  },
+  {
+    "file": "migrations.svg",
+    "source": "lucide:database-arrow-up"
+  },
+  {
+    "file": "pest.svg",
+    "source": "https://pestphp.com/www/favicon.svg"
+  },
+  {
+    "file": "phpstan.svg",
+    "source": "lucide:scan-search"
+  },
+  {
+    "file": "pint.svg",
+    "source": "https://raw.githubusercontent.com/laravel/pint/main/art/logo.svg"
+  },
+  {
+    "file": "server.svg",
+    "source": "lucide:server"
+  },
+  {
+    "file": "frontend.svg",
+    "source": "lucide:code-xml"
+  },
+  {
+    "file": "database.svg",
+    "source": "lucide:database"
+  },
+  {
+    "file": "infrastructure.svg",
+    "source": "lucide:workflow"
+  },
+  {
+    "file": "testing.svg",
+    "source": "lucide:test-tubes"
+  },
+  {
+    "file": "mobile.svg",
+    "source": "lucide:smartphone"
+  },
+  {
+    "file": "phpstan.png",
+    "source": "https://phpstan.org/assets/favicon-DrgKtcYh.png"
+  },
+  {
+    "file": "html.svg",
+    "source": "devicon:html5"
+  },
+  {
+    "file": "css.svg",
+    "source": "devicon:css3"
+  },
+  {
+    "file": "dotnet.svg",
+    "source": "devicon:dot-net"
+  },
+  {
+    "file": "sql.svg",
+    "source": "lucide:database"
+  },
+  {
+    "file": "acf.svg",
+    "source": "lucide:sliders-horizontal"
+  },
+  {
+    "file": "tiptap.svg",
+    "source": "lucide:text-cursor-input"
+  },
+  {
+    "file": "design.svg",
+    "source": "lucide:pen-tool"
+  },
+  {
+    "file": "math.svg",
+    "source": "lucide:sigma"
+  },
+  {
+    "file": "education.svg",
+    "source": "lucide:graduation-cap"
+  },
+  {
+    "file": "csharp.svg",
+    "source": "devicon:csharp"
+  },
+  {
+    "file": "cplusplus.svg",
+    "source": "devicon:cplusplus"
+  },
+  {
+    "file": "windows.svg",
+    "source": "devicon:windows11"
+  },
+  {
+    "file": "dotnetcore.svg",
+    "source": "devicon:dotnetcore"
+  },
+  {
+    "file": "java.svg",
+    "source": "devicon:java"
+  },
+  {
+    "file": "spring.svg",
+    "source": "devicon:spring"
+  },
+  {
+    "file": "androidstudio.svg",
+    "source": "devicon:androidstudio"
+  },
+  {
+    "file": "figma.svg",
+    "source": "devicon:figma"
+  },
+  {
+    "file": "photoshop.svg",
+    "source": "devicon:photoshop"
+  },
+  {
+    "file": "illustrator.svg",
+    "source": "devicon:illustrator"
+  },
+  {
+    "file": "aftereffects.svg",
+    "source": "devicon:aftereffects"
+  }
+]

@@ -1,0 +1,8 @@
+---
+import { withBase } from '../utils/paths';
+interface GalleryImage { src: string; alt: string; caption: string; width: number; height: number; kind: 'desktop' | 'phone' | 'mockup' | 'design'; }
+interface Props { title: string; images: GalleryImage[]; }
+const { title, images } = Astro.props;
+const mockups = images.every((image) => image.kind === 'mockup');
+---
+{images.length > 0 && <section class="project-gallery" aria-labelledby="project-gallery-title"><div class="gallery-heading"><h2 id="project-gallery-title">{title}</h2><p>Нажмите на изображение, чтобы открыть его в полном размере.</p></div><div class:list={['project-gallery-grid', { 'gallery-mockups': mockups }]}>{images.map((image) => <figure class:list={['gallery-entry', 'gallery-' + image.kind]}><a href={withBase(image.src)} target="_blank" rel="noopener noreferrer" aria-label={'Открыть изображение: ' + image.caption}><img src={withBase(image.src)} alt={image.alt} width={image.width} height={image.height} loading="lazy" /></a><figcaption>{image.caption}</figcaption></figure>)}</div></section>}

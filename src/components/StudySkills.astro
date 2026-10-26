@@ -1,0 +1,9 @@
+---
+import { withBase } from '../utils/paths';
+import { studySkills } from '../data/profile';
+import TechBadge from './TechBadge.astro';
+---
+<div class="study-skills">
+  <div class="study-skills-heading"><h3>Технологии из учебных работ</h3><p>Языки и инструменты, с которыми работал в БГУ.</p></div>
+  <div class="study-skills-grid">{studySkills.map((group) => <article class="study-skill"><div class="study-skill-heading"><span class="study-tool-icon"><img src={withBase('/icons/' + group.icon + '.svg')} width="28" height="28" alt="" loading="lazy" /></span><h4>{group.label}</h4></div><p>{group.description}</p><div class="tags">{group.items.map((name) => <TechBadge name={name} />)}</div></article>)}</div>
+</div>
