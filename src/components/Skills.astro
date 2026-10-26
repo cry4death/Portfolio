@@ -4,12 +4,21 @@ import { skills } from '../data/profile';
 import { skillIcons } from '../data/technologies';
 import TechBadge from './TechBadge.astro';
 import StudySkills from './StudySkills.astro';
-const primaryNames = ['Backend', 'Frontend', 'Базы данных', 'Мобильная разработка'];
-const primary = primaryNames.map((name) => skills.find((skill) => skill.label === name)!).filter(Boolean);
-const additional = skills.filter((skill) => !primaryNames.includes(skill.label));
+import Icon from './Icon.astro';
+const primary = skills.filter((skill) => skill.group === 'core');
+const practice = skills.filter((skill) => skill.group === 'practice');
+const additional = skills.filter((skill) => skill.group === 'additional');
 ---
 <section id="skills" class="section container skills-section" aria-labelledby="skills-title">
   <div class="section-heading"><h2 id="skills-title">Навыки и опыт</h2><p>Основные направления — веб-разработка и Flutter.</p></div>
   <div class="skills-grid skills-primary">{primary.map((skill) => <article class="skill-card"><div class="skill-card-heading"><span class="skill-category-icon" aria-hidden="true"><img src={withBase('/icons/' + skillIcons[skill.label] + '.svg')} width="25" height="25" alt="" loading="lazy" /></span><h3>{skill.label}</h3></div><div class="tags">{skill.items.map((name) => <TechBadge name={name} />)}</div></article>)}</div>
-  <details class="more-skills"><summary><span><strong>Все инструменты и учебный опыт</strong><span>WordPress, тестирование, инфраструктура, .NET, Java и дизайн</span></span><span class="more-skills-symbol" aria-hidden="true">+</span></summary><div class="more-skills-content"><div class="skills-grid">{additional.map((skill) => <article class="skill-card"><div class="skill-card-heading"><span class="skill-category-icon" aria-hidden="true"><img src={withBase('/icons/' + skillIcons[skill.label] + '.svg')} width="25" height="25" alt="" loading="lazy" /></span><h3>{skill.label}</h3></div><p>{skill.description}</p><div class="tags">{skill.items.map((name) => <TechBadge name={name} />)}</div></article>)}</div><StudySkills /></div></details>
+  <div class="practice-heading"><h3>Задачи и решения</h3><p>Где применяю инструменты и как устроены отдельные части проектов.</p></div>
+  <div class="skills-grid competency-grid">{practice.map((skill) => <article class="skill-card competency-card">
+    <div class="skill-card-heading"><span class="skill-category-icon" aria-hidden="true"><img src={withBase('/icons/' + skillIcons[skill.label] + '.svg')} width="25" height="25" alt="" loading="lazy" /></span><h4>{skill.label}</h4></div>
+    <p>{skill.description}</p>
+    <details class="competency-tools"><summary>Технологии и подходы <span aria-hidden="true">+</span></summary><div class="tags">{skill.items.map((name) => <TechBadge name={name} />)}</div></details>
+    {skill.evidence && <a class="skill-evidence" href={withBase(skill.evidence.href)}>{skill.evidence.title}<Icon name="arrow" size={18} /></a>}
+  </article>)}</div>
+  <details class="more-skills project-tools"><summary><span><strong>WordPress и устройство портфолио</strong><span>Тема и плагин MARÉA, контент, сборка и публикация этого сайта</span></span><span class="more-skills-symbol" aria-hidden="true">+</span></summary><div class="more-skills-content"><div class="skills-grid">{additional.map((skill) => <article class="skill-card"><div class="skill-card-heading"><span class="skill-category-icon" aria-hidden="true"><img src={withBase('/icons/' + skillIcons[skill.label] + '.svg')} width="25" height="25" alt="" loading="lazy" /></span><h3>{skill.label}</h3></div><p>{skill.description}</p><div class="tags">{skill.items.map((name) => <TechBadge name={name} />)}</div>{skill.evidence && <a class="skill-evidence" href={withBase(skill.evidence.href)}>{skill.evidence.title}<Icon name="arrow" size={18} /></a>}</article>)}</div></div></details>
+  <details class="more-skills academic-tools"><summary><span><strong>Учебный опыт</strong><span>.NET, C#, C++, Java, Android и инструменты дизайна</span></span><span class="more-skills-symbol" aria-hidden="true">+</span></summary><div class="more-skills-content"><StudySkills /><a class="skill-evidence" href={withBase('/education/')}>Образование и программа БГУ<Icon name="arrow" size={18} /></a></div></details>
 </section>

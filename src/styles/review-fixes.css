@@ -13,6 +13,22 @@
   #projects.section { padding-top: 55px; }
   .skills-primary .skill-card-heading { margin-bottom: 0; }
   .skills-primary .skill-card { padding: 23px; }
+  .practice-heading { margin: 38px 0 21px; }
+  .practice-heading h3 { font-size: 28px; letter-spacing: -.025em; font-weight: 550; }
+  .practice-heading p { margin-top: 10px; max-width: 680px; font-size: 17px; }
+  .competency-card h4 { font-size: 22px; line-height: 1.35; letter-spacing: -.025em; }
+  .competency-card .skill-card-heading { align-items: flex-start; }
+  .competency-card .skill-category-icon { width: 40px; height: 40px; border-radius: 9px; }
+  .competency-tools { align-self: stretch; margin-top: 19px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .competency-tools > summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; font-size: 16px; min-height: 44px; list-style: none; cursor: pointer; color: var(--ink); }
+  .competency-tools > summary::-webkit-details-marker { display: none; }
+  .competency-tools > summary > span { font-size: 24px; color: var(--blue); }
+  .competency-tools[open] > summary > span { transform: rotate(45deg); }
+  .competency-tools .tags { margin-top: 13px; }
+  .skill-evidence { display: flex; align-items: center; justify-content: space-between; gap: 16px; align-self: stretch; margin-top: 17px; padding-block: 7px; color: var(--blue); font-size: 16px; line-height: 1.6; min-height: 44px; }
+  .skill-evidence > svg { flex-shrink: 0; }
+  .skill-evidence:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .academic-tools .study-skills { padding-top: 6px; }
   .more-skills { margin-top: 22px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
   .more-skills > summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 25px; cursor: pointer; list-style: none; }
   .more-skills > summary::-webkit-details-marker { display: none; }

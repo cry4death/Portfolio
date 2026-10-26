@@ -19,7 +19,7 @@ export const profile: Profile = {
   name: 'Максим',
   role: 'Веб- и мобильный разработчик',
   email: 'maxmaxretpro@gmail.com',
-  github: null,
+  github: 'https://github.com/cry4death',
   telegram: 'https://t.me/youaremy6996',
   available: true,
   about: 'Разрабатываю сайты на Laravel и WordPress. В Lighthouse сделал каталог услуг и врачей, панель управления и интеграцию с медицинской системой. Сейчас работаю над сайтом MARÉA и приложением для Lighthouse на Flutter.',
@@ -31,15 +31,45 @@ export const profile: Profile = {
   },
 };
 
-export const skills: { label: string; description: string; items: string[] }[] = [
-  { label: 'Backend', description: 'Каталоги, админ-панели, формы и интеграция с медицинской системой в Lighthouse.', items: ['PHP', 'Laravel', 'Filament', 'REST API'] },
-  { label: 'Frontend', description: 'Адаптивные интерфейсы Lighthouse и MARÉA. Расширения редактора контента на Tiptap.', items: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Livewire', 'Tailwind CSS', 'Tiptap'] },
-  { label: 'Базы данных', description: 'Модели и связи для врачей, услуг и контента. Запросы, миграции и импорт данных.', items: ['SQL', 'MySQL', 'Eloquent ORM', 'Миграции'] },
-  { label: 'WordPress и магазин', description: 'Собственная тема и плагин MARÉA, поля услуг и специалистов. Магазин на WooCommerce — в разработке.', items: ['WordPress', 'WooCommerce', 'ACF', 'PHP'] },
-  { label: 'Инфраструктура', description: 'Сборка фронтенда, сценарий развёртывания и автоматические проверки проекта.', items: ['Git', 'Vite', 'GitHub Actions', 'Shell'] },
-  { label: 'Тестирование', description: 'Проверки логики, HTTP-сценариев и браузерных взаимодействий в Lighthouse.', items: ['Pest', 'Playwright', 'PHPStan', 'Larastan', 'Pint'] },
-  { label: 'Мобильная разработка', description: 'Рабочий прототип Lighthouse: Riverpod, go_router, Dio и Laravel API.', items: ['Flutter', 'Dart'] },
-  { label: 'Это портфолио', description: 'Astro и TypeScript для страниц и контента. Описания проектов в Markdown, конфигурация публикации для Cloudflare Workers.', items: ['Astro', 'TypeScript', 'Markdown', 'Cloudflare Workers'] },
+export interface SkillGroup {
+  label: string;
+  group: 'core' | 'practice' | 'additional';
+  description: string;
+  items: string[];
+  evidence?: { href: string; title: string };
+}
+
+export const skills: SkillGroup[] = [
+  { label: 'Backend', group: 'core', description: 'Каталог клиники, административная панель, команды импорта и валидация данных.', items: ['PHP', 'Laravel', 'Filament', 'Composer', 'Laravel Artisan'] },
+  { label: 'Frontend', group: 'core', description: 'Адаптивные интерфейсы Lighthouse и MARÉA, расширения редактора Tiptap.', items: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Livewire', 'Tailwind CSS', 'Tiptap'] },
+  { label: 'Базы данных', group: 'core', description: 'Проектирование таблиц, связи моделей, миграции и импорт каталога.', items: ['SQL', 'MySQL', 'Eloquent ORM', 'Миграции'] },
+  { label: 'Мобильная разработка', group: 'core', description: 'Приложение Lighthouse на Flutter: состояние экранов, маршруты, HTTP-запросы и хранение токенов.', items: ['Flutter', 'Dart', 'Riverpod', 'Dio', 'go_router', 'flutter_secure_storage'] },
+  {
+    label: 'API и интеграции', group: 'practice',
+    description: 'Подключение внешних сервисов, разбор JSON, токены, таймауты и обработка недоступности API.',
+    items: ['REST API', 'HTTP / HTTPS', 'JSON', 'Dio', 'Laravel HTTP Client', 'Token Authentication'],
+    evidence: { href: '/projects/lighthouse/#mis-integration', title: 'Lighthouse: сбой медицинской системы' },
+  },
+  {
+    label: 'DevOps и развёртывание', group: 'practice',
+    description: 'Сборка через npm и Composer, сценарий обновления Laravel и проверки в GitHub Actions. Портфолио опубликовано на GitHub Pages.',
+    items: ['Git', 'GitHub Actions', 'CI/CD', 'Bash', 'GitHub Pages', 'Vite', 'npm', 'Node.js', 'Composer'],
+    evidence: { href: '/notes/portfolio/#deployment', title: 'Портфолио: публикация из GitHub' },
+  },
+  {
+    label: 'Качество и безопасность', group: 'practice',
+    description: 'Unit, Feature и E2E-тесты, подмена внешних HTTP-запросов, статический анализ, валидация форм и политики доступа.',
+    items: ['Pest', 'Playwright', 'PHPStan', 'Larastan', 'Pint', 'Mocking', 'Input Validation', 'Authorization'],
+    evidence: { href: '/projects/lighthouse-mobile/#session-recovery', title: 'Flutter: сессия при обрыве сети' },
+  },
+  {
+    label: 'SEO и производительность', group: 'practice',
+    description: 'Метаинформация, структурированные данные, sitemap, robots.txt и canonical. Кэширование ответов МИС и адаптивная вёрстка.',
+    items: ['Technical SEO', 'Schema.org', 'Sitemap XML', 'robots.txt', 'Canonical URLs', 'IndexNow'],
+    evidence: { href: '/projects/lighthouse/#seo', title: 'Lighthouse: индексирование и метаданные' },
+  },
+  { label: 'WordPress и магазин', group: 'additional', description: 'Gutenberg и блочная тема, собственный плагин, типы записей и таксономии. Магазин WooCommerce — в разработке.', items: ['WordPress', 'Gutenberg', 'ACF', 'PHP', 'WooCommerce'], evidence: { href: '/projects/marea/#booking-fallback', title: 'MARÉA: онлайн-запись и резервный сценарий' } },
+  { label: 'Это портфолио', group: 'additional', description: 'Astro, TypeScript и Markdown; подключены MDX и Astro Sitemap. GitHub Pages — текущая публикация. Sass установлен; оформление написано на CSS. Конфигурация Cloudflare Workers через Wrangler подготовлена для альтернативного развёртывания.', items: ['Astro', 'TypeScript', 'Markdown', 'MDX', 'Astro Sitemap', 'Sass', 'GitHub Pages', 'Wrangler', 'Cloudflare Workers'], evidence: { href: '/notes/portfolio/', title: 'Как устроено портфолио' } },
 ];
 
 // Technologies Maxim confirmed using during his university studies.

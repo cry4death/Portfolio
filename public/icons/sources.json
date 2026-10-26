@@ -206,5 +206,73 @@
   {
     "file": "aftereffects.svg",
     "source": "devicon:aftereffects"
+  },
+  {
+    "file": "composer.svg",
+    "source": "devicon:composer"
+  },
+  {
+    "file": "github.svg",
+    "source": "logos:github-icon"
+  },
+  {
+    "file": "npm.svg",
+    "source": "logos:npm-icon"
+  },
+  {
+    "file": "nodejs.svg",
+    "source": "logos:nodejs-icon"
+  },
+  {
+    "file": "mdx.svg",
+    "source": "logos:mdx"
+  },
+  {
+    "file": "sass.svg",
+    "source": "logos:sass"
+  },
+  {
+    "file": "state.svg",
+    "source": "lucide:layers"
+  },
+  {
+    "file": "network.svg",
+    "source": "lucide:network"
+  },
+  {
+    "file": "route.svg",
+    "source": "lucide:route"
+  },
+  {
+    "file": "secure-storage.svg",
+    "source": "lucide:lock-keyhole"
+  },
+  {
+    "file": "json.svg",
+    "source": "lucide:file-json"
+  },
+  {
+    "file": "workflow.svg",
+    "source": "lucide:workflow"
+  },
+  {
+    "file": "validation.svg",
+    "source": "lucide:shield-check"
+  },
+  {
+    "file": "seo.svg",
+    "source": "lucide:search-check"
+  },
+  {
+    "file": "sitemap.svg",
+    "source": "lucide:network"
+  },
+  {
+    "file": "file-settings.svg",
+    "source": "lucide:file-cog"
+  },
+  {
+    "file": "link.svg",
+    "source": "lucide:link"
   }
 ]
